@@ -1,0 +1,204 @@
+:root{
+  --bg:#fff9f2;
+  --card:#ffffff;
+  --accent:#ffb74d;
+  --accent-2:#4fc3f7;
+  --text:#333;
+  --muted:#666;
+  --success:#66bb6a;
+  --danger:#ef5350;
+  --rounded:12px;
+  --max-width:900px;
+  --shadow: 0 6px 18px rgba(15,23,42,0.08);
+  --child-font: "Poppins", "Segoe UI", Roboto, system-ui, -apple-system;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:var(--child-font);
+  background:linear-gradient(180deg,#fff9f2 0%, #fff 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:20px;
+}
+
+/* Header */
+.site-header{
+  width:100%;
+  max-width:var(--max-width);
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  background:linear-gradient(90deg, rgba(255,183,77,0.14), rgba(79,195,247,0.06));
+  padding:12px;
+  border-radius:var(--rounded);
+  box-shadow:var(--shadow);
+}
+.logo{
+  width:64px;
+  height:64px;
+}
+
+/* Container */
+.container{
+  width:100%;
+  max-width:var(--max-width);
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+/* Card */
+.card{
+  background:var(--card);
+  padding:18px;
+  border-radius:var(--rounded);
+  box-shadow:var(--shadow);
+}
+.hidden{display:none}
+
+h1{margin:0;font-size:20px}
+h2{margin:0 0 12px 0}
+.tagline{margin:0;color:var(--muted);font-size:13px}
+
+/* Controls */
+.controls{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:12px;
+}
+.controls label{
+  display:flex;
+  flex-direction:column;
+  font-size:13px;
+  color:var(--muted);
+}
+select{
+  margin-top:6px;
+  padding:10px;
+  border-radius:10px;
+  border:1px solid #eee;
+  min-width:140px;
+  font-size:15px;
+}
+
+/* Actions */
+.actions{
+  margin-top:8px;
+}
+.actions.small{margin-top:6px}
+.btn{
+  background:#fff;
+  border:1px solid rgba(0,0,0,0.06);
+  padding:10px 14px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:600;
+  color:var(--text);
+  box-shadow: 0 2px 8px rgba(15,23,42,0.04);
+}
+.btn.primary{background:var(--accent);border:none;color:#fff}
+.btn.success{background:var(--success);border:none;color:#fff}
+.btn.danger{background:var(--danger);border:none;color:#fff}
+
+/* Quiz */
+.quiz-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:12px;
+  gap:10px;
+}
+#questionArea{
+  background:linear-gradient(180deg,#fff,#fffefc);
+  border-radius:10px;
+  padding:14px;
+  border:1px solid #fff3e0;
+}
+.question-text{
+  font-size:18px;
+  margin-bottom:10px;
+}
+.options{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.option{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid rgba(0,0,0,0.06);
+  cursor:pointer;
+  background:#fff;
+}
+.option input{display:none}
+.option-label{
+  font-weight:600;
+  width:28px;
+  height:28px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:8px;
+  background:var(--accent-2);
+  color:#fff;
+  font-size:14px;
+}
+.option .text{flex:1;font-size:15px;color:var(--text)}
+
+/* Selected */
+.option.selected{
+  background:linear-gradient(90deg, rgba(79,195,247,0.12), rgba(255,183,77,0.06));
+  border:1px solid rgba(79,195,247,0.16);
+}
+
+/* Result */
+.score{
+  font-size:18px;
+  font-weight:700;
+}
+.feedback{
+  margin-top:12px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.feedback .item{
+  padding:10px;
+  border-radius:8px;
+  background:#fffefc;
+  border:1px solid #fff3e0;
+}
+.feedback .correct{border-left:6px solid var(--success)}
+.feedback .wrong{border-left:6px solid var(--danger)}
+.explanation{font-size:14px;color:var(--muted);margin-top:6px}
+
+/* Footer */
+.site-footer{
+  width:100%;
+  max-width:var(--max-width);
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* Responsive */
+@media (max-width:720px){
+  .controls{flex-direction:column}
+  .brand{gap:10px}
+  .logo{width:56px;height:56px}
+  .question-text{font-size:16px}
+}

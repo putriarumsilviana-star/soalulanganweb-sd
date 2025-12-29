@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Latihan Soal SD/MI — Ramah Anak</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img src="assets/logo.svg" alt="Logo Anak Belajar" class="logo" />
+      <div>
+        <h1>Latihan Soal SD/MI</h1>
+        <p class="tagline">Belajar seru, mudah, dan cepat!</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="home" class="card">
+      <h2>Pilih Kelas & Mata Pelajaran</h2>
+
+      <div class="controls">
+        <label>
+          Kelas
+          <select id="kelasSelect" aria-label="Pilih kelas">
+            <option value="1">Kelas 1</option>
+            <option value="2">Kelas 2</option>
+            <option value="3">Kelas 3</option>
+            <option value="4" selected>Kelas 4</option>
+            <option value="5">Kelas 5</option>
+            <option value="6">Kelas 6</option>
+          </select>
+        </label>
+
+        <label>
+          Mata Pelajaran
+          <select id="mapelSelect" aria-label="Pilih mata pelajaran">
+            <option value="Matematika" selected>Matematika</option>
+            <option value="Bahasa Indonesia">Bahasa Indonesia</option>
+            <option value="IPA">IPA</option>
+            <option value="IPS">IPS</option>
+            <option value="PPKn">PPKn</option>
+          </select>
+        </label>
+
+        <label>
+          Jumlah Soal
+          <select id="jumlahSoalSelect" aria-label="Pilih jumlah soal">
+            <option value="10" selected>10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="actions">
+        <button id="startBtn" class="btn primary">Mulai Latihan</button>
+      </div>
+
+      <p class="note">Soal dibuat sesuai kurikulum SD/MI dan bahasa mudah dimengerti.</p>
+    </section>
+
+    <section id="quiz" class="card hidden" aria-live="polite">
+      <div class="quiz-header">
+        <div id="quizMeta">Kelas <span id="metaKelas"></span> — <span id="metaMapel"></span></div>
+        <div id="progress">Soal <span id="currentIndex">1</span>/<span id="totalQuestions">10</span></div>
+      </div>
+
+      <div id="questionArea">
+        <!-- Question is rendered by JS -->
+      </div>
+
+      <div class="quiz-controls">
+        <button id="prevBtn" class="btn" disabled>‹ Sebelumnya</button>
+        <button id="nextBtn" class="btn">Berikutnya ›</button>
+        <button id="submitBtn" class="btn success">Kirim Jawaban</button>
+      </div>
+
+      <div class="actions small">
+        <button id="quitBtn" class="btn danger">Kembali</button>
+      </div>
+    </section>
+
+    <section id="result" class="card hidden" aria-live="polite">
+      <h2>Hasil Latihan</h2>
+      <p class="score">Skor: <span id="scoreValue">0</span>/<span id="maxScore">0</span> — <span id="percent">0%</span></p>
+      <div id="resultDetails">
+        <!-- Per-question feedback -->
+      </div>
+      <div class="actions">
+        <button id="retryBtn" class="btn primary">Ulangi Latihan</button>
+        <button id="homeBtn" class="btn">Kembali ke Beranda</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© 2025 Latihan Soal SD/MI — Dibuat untuk kegiatan belajar anak</small>
+  </footer>
+
+  <script src="js/questions.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
